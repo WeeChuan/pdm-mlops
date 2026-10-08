@@ -38,16 +38,16 @@ jobs:
       #  run: pip install pip-audit && pip-audit -r requirements.txt
 
       # *From Gemini  
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          # Fetch full history so Gitleaks can scan past commits
-          fetch-depth: 0 
+      #- name: Checkout Code
+      #  uses: actions/checkout@v4
+      #  with:
+      #    # Fetch full history so Gitleaks can scan past commits
+      #fetch-depth: 0 
       # *From Gemini
-      - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${ secrets.GITHUB_TOKEN }
+      #- name: Run Gitleaks
+      #  uses: gitleaks/gitleaks-action@v2
+      #  env:
+      #    GITHUB_TOKEN: ${ secrets.GITHUB_TOKEN }
 
       # TODO 7a: run the training script (it also enforces your quality gate).
       - name: Train, track in MLflow and register

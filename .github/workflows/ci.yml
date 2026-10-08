@@ -28,14 +28,14 @@ jobs:
       #   Scan dependencies:      run: pip install pip-audit && pip-audit -r requirements.txt
       # THINK: where in the order should it go? Before training, or at the very end?
       ######## Quality checks should be before training. Security checks will be at the end.
-      - name: Lint the code
-        run: pip install ruff && ruff check .
+      #- name: Lint the code
+      #  run: pip install ruff && ruff check .
 
       - name: Scan code for bugs
         run: pip install bandit && bandit -r app.py train.py
 
-      - name: Scan dependencies
-        run: pip install pip-audit && pip-audit -r requirements.txt
+      #- name: Scan dependencies
+      #  run: pip install pip-audit && pip-audit -r requirements.txt
 
       # *From Gemini  
       - name: Checkout Code

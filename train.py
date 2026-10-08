@@ -29,7 +29,7 @@ MODEL_NAME = "machine-failure-model"
 #   Option B: 0.3  -> catches more failures (higher recall), more false alarms
 #   Option C: 0.2  -> very cautious
 # THINK: a missed failure stops the line for hours; a false alarm costs one 10-minute inspection.
-THRESHOLD = 0.2
+THRESHOLD = 0.3
 
 # TODO 2b: quality gate. The best model is NOT registered if its PR-AUC is below this value.
 #   Option A: 0.5 (lenient)   Option B: 0.6   Option C: 0.7 (strict)

@@ -71,12 +71,9 @@ def test_predict_under_time_limit():
     #   - /predict answers in under 200 ms
     #   - the API never predicts failure for a brand-new tool at normal torque
 
-
-    test_json = client.post("/predict", json={**HEALTHY, "tool_wear_min": 40, "torque_nm": 55}).json()
-
     # Start the timer, start the request, and measure the elapsed time in milliseconds
     start_time = time.perf_counter()
-    response = client.post("/predict", json=test_json)
+    response = client.post("/predict", json={**HEALTHY, "tool_wear_min": 40, "torque_nm": 55})
     elapsed_time_ms = (time.perf_counter() - start_time) * 1000
 
     # Assertions
